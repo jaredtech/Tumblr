@@ -6,7 +6,7 @@ import android.support.v4.app.Fragment
 import android.support.v4.app.FragmentManager
 import android.support.v4.app.FragmentPagerAdapter
 
-class MainAdapter(var mContext: Context, fm: FragmentManager,var tabsTitle: List<TabsItem>): FragmentPagerAdapter(fm) {
+class MainPagerAdapter(var mContext: Context, fm: FragmentManager, var tabsTitle: List<TabsItem>): FragmentPagerAdapter(fm) {
 //    private lateinit var mContext: Context
 //    private lateinit var tabsTitle: String
     override fun getItem(position: Int): Fragment {

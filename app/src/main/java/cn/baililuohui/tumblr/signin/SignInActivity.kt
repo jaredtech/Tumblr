@@ -67,6 +67,7 @@ class SignInActivity : AppCompatActivity() {
         MyAsynctask().execute()
     }
 
+    @SuppressLint("StaticFieldLeak")
     inner class MyAsynctask : AsyncTask<String, Any, String>() {
         var url: String = ""
         override fun doInBackground(vararg p0: String?): String {

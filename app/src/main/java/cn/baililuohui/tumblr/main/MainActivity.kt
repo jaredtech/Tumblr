@@ -4,9 +4,9 @@ import android.app.Activity
 import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
-import cn.baililuohui.tumblr.MessageFragment
+import cn.baililuohui.tumblr.message.MessageFragment
 import cn.baililuohui.tumblr.R
-import cn.baililuohui.tumblr.SearchFragment
+import cn.baililuohui.tumblr.search.SearchFragment
 import cn.baililuohui.tumblr.home.HomeFragment
 import cn.baililuohui.tumblr.profile.ProfileFragment
 import kotlinx.android.synthetic.main.activity_main.*
@@ -23,7 +23,7 @@ class MainActivity : AppCompatActivity() {
         tabsItems.add(TabsItem("消息", MessageFragment::class.java))
         tabsItems.add(TabsItem("我", ProfileFragment::class.java))
 
-        homePager.adapter = MainAdapter(this, supportFragmentManager, tabsItems)
+        homePager.adapter = MainPagerAdapter(this, supportFragmentManager, tabsItems)
         homeTabs.setupWithViewPager(homePager)
     }
 

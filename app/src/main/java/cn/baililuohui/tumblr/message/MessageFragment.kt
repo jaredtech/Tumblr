@@ -1,4 +1,4 @@
-package cn.baililuohui.tumblr
+package cn.baililuohui.tumblr.message
 
 
 import android.os.Bundle
@@ -6,6 +6,7 @@ import android.support.v4.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import cn.baililuohui.tumblr.R
 
 class MessageFragment : Fragment() {
 
@@ -22,7 +23,6 @@ class MessageFragment : Fragment() {
 
     companion object {
         @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-                MessageFragment()
+        val newInstance = MessageFragment()
     }
 }

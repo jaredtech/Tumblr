@@ -32,7 +32,7 @@ class ProfileFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        var userTask = @SuppressLint("StaticFieldLeak")
+        val userTask = @SuppressLint("StaticFieldLeak")
         object: AsyncTask<Any, Any, User>(){
             var token: String? = null
             var secret: String? = null
@@ -44,6 +44,7 @@ class ProfileFragment : Fragment() {
             override fun doInBackground(vararg p0: Any?): User {
                 val client = JumblrClient(Constant.REST_CONSUMER_KEY, Constant.REST_CONSUMER_SECRET)
                 client.setToken(token, secret)
+                client.userDashboard()
                 return client.user()
             }
 
@@ -62,7 +63,6 @@ class ProfileFragment : Fragment() {
 
     companion object {
         @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-                ProfileFragment()
+        val newInstance = ProfileFragment()
     }
 }
